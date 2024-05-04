@@ -52,6 +52,8 @@ public class ProjectController {
     }
 
     //Todo : 프로젝트 로드 시 최상위 파일들도 불러와야 함. Dto 수정 필요 -> 수정 끝 확인필요
+    // 최상위 폴더랑 최상위 파일만 가져오면 되는거 아닌가? 지금 폴더는 하위 폴더도 다 불러오는데 불러와야하나 싶네
+    // 차라리 폴더 클릭하면 그 안에 있는 폴더랑 파일 다 불러오는 메소드를 만드는게 편할듯
     @GetMapping("/{projectId}")
     public ResponseEntity<ProjectChildsDto> findFolders(@PathVariable Long projectId) {
         ProjectChildsDto childs = projectService.findChilds(projectId);
