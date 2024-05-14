@@ -16,11 +16,12 @@ spec:
         - name: backend
           # 여러분의 backend image 주소를 입력해주세요.
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_929ff08f6d32
+          imagePullPolicy: Always
           env:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URL
-              value: jdbc:mysql://localhost:3306/cocoide
+              value: jdbc:mysql://mysql:3306/cocoide
           resources:
             requests:
               memory: 1Gi
