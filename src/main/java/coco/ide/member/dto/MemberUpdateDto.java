@@ -1,18 +1,13 @@
 package coco.ide.member.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Builder
+@AllArgsConstructor
 public class MemberUpdateDto {
-    private String nickname;
-    private String password;
-
-    public MemberUpdateDto() {}
-
-    public MemberUpdateDto(String nickname, String password) {
-        this.nickname = nickname;
-        this.password = password;
-    }
-
+    private final String nickname;
+    private final String password;
 }

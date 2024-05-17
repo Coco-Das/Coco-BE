@@ -1,4 +1,4 @@
-package coco.ide.global.common;
+package coco.ide.global.common.exception;
 
 import lombok.Getter;
 
@@ -7,8 +7,7 @@ public class BusinessLogicException extends RuntimeException {
     private final ExceptionCode exceptionCode;
 
     public BusinessLogicException(ExceptionCode exceptionCode) {
-        super(exceptionCode.getDescription());
+        super(exceptionCode.getMessage());
         this.exceptionCode = exceptionCode;
     }
-
 }

@@ -1,4 +1,4 @@
-package coco.ide.global.common;
+package coco.ide.global.common.exception;
 
 import lombok.Getter;
 
@@ -12,10 +12,9 @@ public enum ExceptionCode {
     UNABLE_TO_SEND_EMAIL("Unable to send email."),
     UNAUTHORIZED("Unauthorized access.");
 
-    private final String description;
+    private final String message;
 
-    ExceptionCode(String description) {
-        this.description = description;
+    ExceptionCode(String message) {
+        this.message = message;
     }
-
 }

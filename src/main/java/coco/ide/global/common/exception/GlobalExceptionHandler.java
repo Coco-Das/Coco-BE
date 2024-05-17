@@ -1,4 +1,4 @@
-package coco.ide.global.common;
+package coco.ide.global.common.exception;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
         String message;
         if (ex.getMessage() != null && ex.getMessage().contains("email")) {
-            message = ExceptionCode.MEMBER_EXISTS.getDescription();
+            message = ExceptionCode.MEMBER_EXISTS.getMessage();
         } else {
             message = "Data integrity violation";
         }
@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BusinessLogicException.class)
     public ResponseEntity<String> handleBusinessLogicException(BusinessLogicException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getExceptionCode().getDescription());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getExceptionCode().getMessage());
     }
 
     @ExceptionHandler(Exception.class)
